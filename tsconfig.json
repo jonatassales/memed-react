@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "outDir": "lib",
+    "baseUrl": "./",
+    "target": "esnext",
+    "module": "esnext",
+    "lib": ["ES2015", "DOM", "es2018.promise", "es2017"],
+    "declaration": true,
+    "composite": false,
+    "downlevelIteration": true,
+    "strict": true,
+    "jsx": "react",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "types": [
+      "react"
+    ]
+  },
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "lib/**"
+  ]
+}

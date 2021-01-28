@@ -15,10 +15,10 @@ yarn add memed-react
 ```
 
 ## Uso
-A biblioteca garante que o script será criado, e o módulo liberado somente quando as funções `setDoctorToken` e `setPatient` forem chamadas com os respectivos valores. As funções podem ser obtidas do hook `useMemed` após seu componente estar sendo encapsulado pelo `MemedProvider`. Você pode acionar o módulo de prescrição passando uma `ref` do seu botão ou usando as funções `showPrescription` e `showPrescription` para abrir e fechar o módulo de forma imperativa. Você consegue controlar o estado de inicialização do módulo usando a variável `loadingModule`.
+A biblioteca garante que o script será criado, e o módulo liberado somente quando as funções `setDoctorToken` e `setPatient` forem chamadas com os respectivos valores. As funções podem ser obtidas do hook `useMemed` após seu componente estar sendo encapsulado pelo `MemedProvider`. Você pode acionar o módulo de prescrição passando uma `ref` do seu botão ou usando as funções `showPrescription` e `hidePrescription` para abrir e fechar o módulo de forma imperativa. Você consegue controlar o estado de inicialização do módulo usando a variável `loadingModule`.
 
 ### Hook useMemed
-Um exemplo utilizando a `ref`:
+Um exemplo utilizando a `Refs`:
 
 ```javascript
 import React from 'react'

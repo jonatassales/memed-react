@@ -6,6 +6,7 @@
   "repository": "git@github.com:jonatassales/memed-react.git",
   "author": "Jonatas Sales <jonatasvsales@gmail.com>",
   "license": "MIT",
+  "keywords": ["memed", "react memed", "memed integracao"],
   "scripts": {
     "build": "tsc",
     "lint": "eslint --ext .ts,.tsx ./src"

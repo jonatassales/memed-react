@@ -25,7 +25,7 @@ import React from 'react'
 import Button from '@material-ui/core/Button'
 import { useMemed } from 'memed-react'
 
-import { Member } from '@patient/domain/Patient'
+import { Patient } from '@patient/domain/Patient'
 
 interface PrescriptionButtonProps {
   patient: Patient

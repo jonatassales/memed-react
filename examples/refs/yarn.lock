@@ -7113,10 +7113,10 @@ media-typer@0.3.0:
   resolved "https://registry.yarnpkg.com/media-typer/-/media-typer-0.3.0.tgz#8710d7af0aa626f8fffa1ce00168545263255748"
   integrity sha1-hxDXrwqmJvj/+hzgAWhUUmMlV0g=
 
-memed-react@^0.1.1:
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/memed-react/-/memed-react-0.1.1.tgz#ec81539b507a2c866e5dbff8e213865421d557eb"
-  integrity sha512-0YjRKZycNumhN2xfcCzLSgh0CjnJaLuncayLiL8IC1VT0AYNlhndr6zGbI/C0wgY3h1p66CjyCcYMiVAYXrCVw==
+memed-react@^0.1.2:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/memed-react/-/memed-react-0.1.2.tgz#7906d9827ed62503d2fa109ac18f72d045161ef0"
+  integrity sha512-BiXYe+sMw0lfFa8c6rZlPdjLVWz0be+UEHKIofjZQav4GDOFLI8YDuq60cTjAf8BZ+JR3NMRnAfntgyntS2Rkg==
   dependencies:
     react "^17.0.1"
 

@@ -1,9 +1,10 @@
 {
   "name": "memed-react",
-  "version": "0.1.3",
+  "version": "0.2.0",
   "description": "React library to integrate with memed",
   "main": "lib/index.js",
   "repository": "git@github.com:jonatassales/memed-react.git",
+  "homepage": "https://memed-react-refs.vercel.app/",
   "author": "Jonatas Sales <jonatasvsales@gmail.com>",
   "license": "MIT",
   "keywords": ["memed", "react memed", "memed integracao"],

@@ -1,6 +1,12 @@
 # memed-react
 `memed-react` é uma biblioteca desenvolvida para o ecossistema React com o objetivo de ajudar na integração com o serviço de prescrição médica online da [Memed](https://memed.com.br/). Algumas etapas da homologação já são feitas pela `lib`, como a desativação de algumas funções, adesão dos dados do paciente antes do módulo estar liberado para uso, e a criação do script em execução que carregam as instancias `MdHub` e `MdSinapsePrescricao`, responsáveis por alguns `bindings` de eventos e commandos.
 
+## Exemplos
+- [Usando refs](https://github.com/jonatassales/memed-react-examples/tree/master/refs)
+
+## Demos
+- [Usando refs](https://memed-react-refs.vercel.app/)
+
 ## Instalação
 Para instalar a biblioteca via `yarn` ou `npm` basta rodar no seu terminal:
 

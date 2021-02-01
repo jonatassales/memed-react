@@ -21,7 +21,6 @@
     "src/**/*"
   ],
   "exclude": [
-    "lib/**",
-    "examples/**"
+    "lib/**"
   ]
 }

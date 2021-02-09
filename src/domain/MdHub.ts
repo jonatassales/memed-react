@@ -12,4 +12,7 @@ export interface MdHub {
     editPatient: unknown | boolean
   }
   module: Module
+  event: {
+    add(name: string, handler: (...args: unknown[]) => void): void
+  }
 }

@@ -5,7 +5,9 @@ export default function disableSensitiveCommands(): void {
     throw MdHubNotInitializedError
   }
 
-  window.MdHub.command.deletePatient = false
-  window.MdHub.command.removePatient = false
-  window.MdHub.command.editPatient = false
+  window.MdHub.command.send('plataforma.prescricao', 'setFeatureToggle', {
+    deletePatient: false,
+    removePatient: false,
+    editPatient: false
+  })
 }

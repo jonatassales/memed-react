@@ -37,8 +37,10 @@ export default function MemedProvider(props: MemedContextProviderProps): React.R
   useActionButtonBind({ patientSet, actionRef })
 
   const onLogout = React.useCallback(() => {
-    cleanUp(scriptId)
-  }, [scriptId])
+    if (prescriptionLoaded) {
+      cleanUp(scriptId)
+    }
+  }, [scriptId, prescriptionLoaded])
 
   const loadingModule = !prescriptionLoaded
 

@@ -18,7 +18,7 @@ export default function useMemed(options?: ModuleOptions): MemedContextValue {
      */
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
-    if (onPrescriptionPrinted !== 'function') {
+    if (typeof onPrescriptionPrinted !== 'function') {
       throw PrescriptionPrintedNotFunctionError
     }
     memed.setOptions(options)

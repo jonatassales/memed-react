@@ -5,7 +5,7 @@ import { Module, ModuleOptions } from '../domain'
 
 export default function onLoadPrescription(
   setPrescriptionLoaded: React.Dispatch<React.SetStateAction<boolean>>,
-  options: ModuleOptions
+  options?: ModuleOptions
 ): void {
   if (!('MdSinapsePrescricao' in window)) {
     throw MdSinapsePrescricaoNotInitializedError
@@ -15,9 +15,10 @@ export default function onLoadPrescription(
     if (modulo.name === 'plataforma.prescricao') {
       setPrescriptionLoaded(true)
 
-      const { onPrescriptionPrinted } = options
-
-      window.MdHub.event.add('prescricaoImpressa', onPrescriptionPrinted)
+      if (options) {
+        console.log('prescricaoImpressa: handled')
+        window.MdHub.event.add('prescricaoImpressa', options.onPrescriptionPrinted)
+      }
     }
   })
 }

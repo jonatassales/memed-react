@@ -20,7 +20,7 @@ export default function useScriptLoader(options: ScriptLoaderOptions): ScriptLoa
   const [prescriptionLoaded, setPrescriptionLoaded] = React.useState(false)
 
   React.useEffect(() => {
-    if (doctorToken) {
+    if (doctorToken && moduleOptions) {
       const memedScript = createMemedScript(doctorToken, color, scriptSrc, scriptId, setPrescriptionLoaded)
       memedScript.onload = onLoadPrescription.bind(null, setPrescriptionLoaded, moduleOptions)
     }

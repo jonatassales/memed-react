@@ -1,3 +1,3 @@
 export interface ModuleOptions {
-  onPrescriptionPrinted?: (prescriptionData: unknown) => void
+  onPrescriptionPrinted: (prescriptionData: unknown) => void
 }

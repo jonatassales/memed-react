@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { ModuleOptions } from '../domain'
-import { setMemedPatient, disableSensitiveCommands } from '../actions'
+import { disableSensitiveCommands } from '../actions'
 import setupOtions from 'src/actions/setupOptions'
 
 interface SetupCommandsParams {

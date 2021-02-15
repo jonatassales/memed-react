@@ -1,6 +1,5 @@
 import React from 'react'
 
-import { ModuleOptions } from '../domain'
 import { createMemedScript, onLoadPrescription } from '../actions'
 
 interface ScriptLoaderOptions {

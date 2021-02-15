@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { ModuleOptions, Patient } from '../domain'
-import { useScriptLoader, useSetupCommands, useActionButtonBind } from '../hooks'
+import { useScriptLoader, useSetupCommands, useActionButtonBind, useSetupPatient } from '../hooks'
 import MemedContext from '../contexts/MemedContext'
 
 import { cleanUp, showPrescription, hidePrescription } from '../actions'
@@ -30,11 +30,12 @@ export default function MemedProvider(props: MemedContextProviderProps): React.R
     doctorToken,
     color,
     scriptSrc,
-    scriptId,
-    moduleOptions: options
+    scriptId
   })
 
-  const { patientSet } = useSetupCommands({ patient, prescriptionLoaded })
+  const { patientSet } = useSetupPatient({ patient, prescriptionLoaded })
+
+  useSetupCommands({ options, prescriptionLoaded })
 
   useActionButtonBind({ patientSet, actionRef })
 
@@ -44,7 +45,7 @@ export default function MemedProvider(props: MemedContextProviderProps): React.R
     }
   }, [scriptId, prescriptionLoaded])
 
-  const loadingModule = !prescriptionLoaded
+  const loadingModule = !prescriptionLoaded || !patientSet
 
   return (
     <MemedContext.Provider

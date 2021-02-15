@@ -1,29 +1,23 @@
 import React from 'react'
 
-import { Patient } from '../domain'
+import { ModuleOptions } from '../domain'
 import { setMemedPatient, disableSensitiveCommands } from '../actions'
+import setupOtions from 'src/actions/setupOptions'
 
-interface SetupCommandsOptions {
-  patient?: Patient
+interface SetupCommandsParams {
   prescriptionLoaded: boolean
+  options?: ModuleOptions
 }
 
-interface SetupCommandsResult {
-  patientSet: boolean
-}
-export default function useSetupCommands(options: SetupCommandsOptions): SetupCommandsResult {
-  const { patient, prescriptionLoaded } = options
-
-  const [patientSet, setPatientSet] = React.useState(false)
+export default function useSetupCommands(params: SetupCommandsParams): void {
+  const { options, prescriptionLoaded } = params
 
   React.useEffect(() => {
-    if (patient && prescriptionLoaded) {
-      setMemedPatient(patient).then(() => {
-        setPatientSet(true)
-        disableSensitiveCommands()
-      })
+    if (prescriptionLoaded) {
+      disableSensitiveCommands()
+      if (options) {
+        setupOtions(options)
+      }
     }
-  }, [patient, prescriptionLoaded])
-
-  return { patientSet }
+  }, [options, prescriptionLoaded])
 }

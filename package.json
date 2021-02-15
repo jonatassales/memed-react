@@ -1,6 +1,6 @@
 {
   "name": "memed-react",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "React library to integrate with memed",
   "main": "lib/index.js",
   "repository": "git@github.com:jonatassales/memed-react.git",

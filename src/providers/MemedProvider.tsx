@@ -35,7 +35,7 @@ export default function MemedProvider(props: MemedContextProviderProps): React.R
 
   const { patientSet } = useSetupPatient({ patient, prescriptionLoaded })
 
-  const { optionsSet } = useSetupCommands({ options, prescriptionLoaded })
+  useSetupCommands({ options, prescriptionLoaded })
 
   useActionButtonBind({ patientSet, actionRef })
 
@@ -57,8 +57,7 @@ export default function MemedProvider(props: MemedContextProviderProps): React.R
         loadingModule,
         showPrescription,
         hidePrescription,
-        setOptions,
-        optionsSet
+        setOptions
       }}
     >
       {children}

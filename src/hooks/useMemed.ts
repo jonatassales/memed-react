@@ -1,16 +1,18 @@
 import React from 'react'
 
 import { ProviderNotPlacedError, PrescriptionPrintedNotFunctionError } from '../errors'
-import { ModuleOptions } from 'src/domain'
+import { ModuleOptions } from '../domain'
 import MemedContext, { MemedContextValue } from '../contexts/MemedContext'
 
 export default function useMemed(options?: ModuleOptions): MemedContextValue {
   const memed = React.useContext(MemedContext)
+  const [optionsSet, setOptionsSet] = React.useState(false)
+
   if (!memed) {
     throw ProviderNotPlacedError
   }
 
-  if (options && !memed.optionsSet) {
+  if (options && !optionsSet) {
     const { onPrescriptionPrinted } = options
 
     /**
@@ -22,6 +24,7 @@ export default function useMemed(options?: ModuleOptions): MemedContextValue {
       throw PrescriptionPrintedNotFunctionError
     }
     memed.setOptions(options)
+    setOptionsSet(true)
   }
 
   return memed

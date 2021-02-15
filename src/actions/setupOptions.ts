@@ -1,4 +1,4 @@
-import { ModuleOptions } from 'src/domain'
+import { ModuleOptions } from '../domain'
 import { MdHubNotInitializedError } from '../errors'
 
 export default function setupOptions(options: ModuleOptions): void {

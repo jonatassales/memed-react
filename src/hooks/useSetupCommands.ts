@@ -8,24 +8,15 @@ interface SetupCommandsParams {
   options?: ModuleOptions
 }
 
-interface SetupOptionsResult {
-  optionsSet: boolean
-}
-
-export default function useSetupCommands(params: SetupCommandsParams): SetupOptionsResult {
+export default function useSetupCommands(params: SetupCommandsParams): void {
   const { options, prescriptionLoaded } = params
-
-  const [optionsSet, setOptionsSet] = React.useState(false)
 
   React.useEffect(() => {
     if (prescriptionLoaded) {
       disableSensitiveCommands()
       if (options) {
         setupOptions(options)
-        setOptionsSet(true)
       }
     }
   }, [options, prescriptionLoaded])
-
-  return { optionsSet }
 }

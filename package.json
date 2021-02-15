@@ -1,6 +1,6 @@
 {
   "name": "memed-react",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "React library to integrate with memed",
   "main": "lib/index.js",
   "repository": "git@github.com:jonatassales/memed-react.git",
@@ -10,7 +10,8 @@
   "keywords": ["memed", "react memed", "memed integracao"],
   "scripts": {
     "build": "tsc",
-    "lint": "eslint --ext .ts,.tsx ./src"
+    "lint": "eslint --ext .ts,.tsx ./src",
+    "publish": "yarn build && npm login && npm publish"
   },
   "peerDependencies": { 
     "react": "16.8.x || 17.x"

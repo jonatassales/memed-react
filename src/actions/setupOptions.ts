@@ -1,7 +1,7 @@
 import { ModuleOptions } from 'src/domain'
 import { MdHubNotInitializedError } from '../errors'
 
-export default function setupOtions(options: ModuleOptions): void {
+export default function setupOptions(options: ModuleOptions): void {
   if (!('MdHub' in window)) {
     throw MdHubNotInitializedError
   }

@@ -1,8 +1,7 @@
 import React from 'react'
 
 import { ModuleOptions } from '../domain'
-import { disableSensitiveCommands } from '../actions'
-import setupOtions from 'src/actions/setupOptions'
+import { disableSensitiveCommands, setupOptions } from '../actions'
 
 interface SetupCommandsParams {
   prescriptionLoaded: boolean
@@ -16,7 +15,7 @@ export default function useSetupCommands(params: SetupCommandsParams): void {
     if (prescriptionLoaded) {
       disableSensitiveCommands()
       if (options) {
-        setupOtions(options)
+        setupOptions(options)
       }
     }
   }, [options, prescriptionLoaded])

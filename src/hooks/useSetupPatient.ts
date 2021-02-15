@@ -11,6 +11,7 @@ interface SetupPatientParams {
 interface SetupPatientResult {
   patientSet: boolean
 }
+
 export default function useSetupPatient(params: SetupPatientParams): SetupPatientResult {
   const { patient, prescriptionLoaded } = params
 

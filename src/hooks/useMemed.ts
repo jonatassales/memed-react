@@ -10,7 +10,7 @@ export default function useMemed(options?: ModuleOptions): MemedContextValue {
     throw ProviderNotPlacedError
   }
 
-  if (options) {
+  if (options && !memed.optionsSet) {
     const { onPrescriptionPrinted } = options
 
     /**

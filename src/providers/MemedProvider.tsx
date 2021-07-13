@@ -45,22 +45,21 @@ export default function MemedProvider(props: MemedContextProviderProps): React.R
     }
   }, [scriptId, prescriptionLoaded])
 
-  const loadingModule = !prescriptionLoaded || !patientSet
+  const loadingModule = React.useMemo(() => !prescriptionLoaded || !patientSet, [prescriptionLoaded, patientSet])
 
-  return (
-    <MemedContext.Provider
-      value={{
-        setDoctorToken,
-        setPatient,
-        setActionRef,
-        onLogout,
-        loadingModule,
-        showPrescription,
-        hidePrescription,
-        setOptions
-      }}
-    >
-      {children}
-    </MemedContext.Provider>
+  const contextValue = React.useMemo(
+    () => ({
+      setDoctorToken,
+      setPatient,
+      setActionRef,
+      onLogout,
+      loadingModule,
+      showPrescription,
+      hidePrescription,
+      setOptions
+    }),
+    [onLogout, loadingModule]
   )
+
+  return <MemedContext.Provider value={contextValue}>{children}</MemedContext.Provider>
 }

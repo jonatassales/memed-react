@@ -1,1 +1,1 @@
-export default new Error('onPrescriptionPrinted must be a function.')
+export default new Error('onPrescriptionExcluded must be a function.')

@@ -13,6 +13,6 @@ export interface MdHub {
   }
   module: Module
   event: {
-    add(name: string, handler: (...args: unknown[]) => void): void
+    add<T = unknown>(name: string, handler: (...args: T[]) => void): void
   }
 }

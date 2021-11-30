@@ -1,18 +1,22 @@
 {
   "name": "memed-react",
-  "version": "2.0.5",
+  "version": "3.0.5",
   "description": "React library to integrate with memed",
   "main": "lib/index.js",
   "repository": "git@github.com:jonatassales/memed-react.git",
   "homepage": "https://memed-react-refs.vercel.app/",
   "author": "Jonatas Sales <jonatasvsales@gmail.com>",
   "license": "MIT",
-  "keywords": ["memed", "react memed", "memed integracao"],
+  "keywords": [
+    "memed",
+    "react memed",
+    "memed integracao"
+  ],
   "scripts": {
     "build": "tsc",
     "lint": "eslint --ext .ts,.tsx ./src"
   },
-  "peerDependencies": { 
+  "peerDependencies": {
     "react": "16.8.x || 17.x"
   },
   "devDependencies": {

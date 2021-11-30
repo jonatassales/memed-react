@@ -6,7 +6,8 @@ export default function setupOptions(options: ModuleOptions): void {
     throw MdHubNotInitializedError
   }
 
-  const { onPrescriptionPrinted } = options
+  const { onPrescriptionPrinted, onPrescriptionExcluded } = options
 
   window.MdHub.event.add('prescricaoImpressa', onPrescriptionPrinted)
+  window.MdHub.event.add('prescricaoExcluida', onPrescriptionExcluded)
 }

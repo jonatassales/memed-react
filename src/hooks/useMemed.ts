@@ -1,6 +1,10 @@
 import React from 'react'
 
-import { ProviderNotPlacedError, PrescriptionPrintedNotFunctionError } from '../errors'
+import {
+  ProviderNotPlacedError,
+  PrescriptionPrintedNotFunctionError,
+  PrescriptionExcludedNotFunctionError
+} from '../errors'
 import { ModuleOptions } from '../domain'
 import MemedContext, { MemedContextValue } from '../contexts/MemedContext'
 
@@ -14,7 +18,7 @@ export default function useMemed(options?: ModuleOptions): MemedContextValue {
 
   React.useEffect(() => {
     if (options && !optionsSet) {
-      const { onPrescriptionPrinted } = options
+      const { onPrescriptionPrinted, onPrescriptionExcluded } = options
 
       /**
        * I had to do this because of non-ts-implementations using the lib
@@ -23,7 +27,10 @@ export default function useMemed(options?: ModuleOptions): MemedContextValue {
       // @ts-ignore
       if (typeof onPrescriptionPrinted !== 'function') {
         throw PrescriptionPrintedNotFunctionError
+      } else if (typeof onPrescriptionExcluded !== 'function') {
+        throw PrescriptionExcludedNotFunctionError
       }
+
       memed.setOptions(options)
       setOptionsSet(true)
     }

@@ -4,7 +4,10 @@
     "baseUrl": "./",
     "target": "ES2018",
     "module": "esnext",
-    "lib": ["ES2018", "DOM"],
+    "lib": [
+      "ES2018",
+      "DOM"
+    ],
     "declaration": true,
     "composite": false,
     "downlevelIteration": true,
